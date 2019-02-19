@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <div>
         <header>
-          <Link to="/">Adopt Me!</Link>
+          <Link to="/">Adopt a Pet! - Phoenix, AZ</Link>
         </header>
         <Router>
           <Results path="/" />

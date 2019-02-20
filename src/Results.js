@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import pf from "petfinder-client";
 import Pet from "./Pet";
 
@@ -8,12 +8,9 @@ const petfinder = pf({
 });
 
 class Results extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pets: []
-    };
-  }
+  state = {
+    pets: []
+  };
 
   componentDidMount() {
     petfinder.pet
@@ -32,7 +29,6 @@ class Results extends React.Component {
         this.setState({
           pets
         });
-        console.log(pets);
       });
   }
 

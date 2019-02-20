@@ -1,6 +1,5 @@
 import React from "react";
 import pf from "petfinder-client";
-import { navigate } from "@reach/router";
 import Carousel from "./Carousel";
 
 const petfinder = pf({

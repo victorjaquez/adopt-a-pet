@@ -14,6 +14,13 @@ export default class Carousel extends React.Component {
     return { photos };
   }
 
+  handleIndexClick = event => {
+    this.setState({
+      // coercing with plus sign to turn string into number to match state type (number)
+      active: +event.target.dataset.index
+    });
+  };
+
   render() {
     const { photos, active } = this.state;
 
@@ -22,7 +29,10 @@ export default class Carousel extends React.Component {
         <img src={photos[active].value} alt="primary animal" />
         <div className="carousel-smaller">
           {photos.map((photo, index) => (
+            /* eslint-disable-next-line */
             <img
+              onClick={this.handleIndexClick}
+              data-index={index}
               key={photo.value}
               src={photo.value}
               className={index === active ? "active" : ""}
